@@ -54,6 +54,7 @@
       login() {
           if(this.user === 'alaa' && this.pass === 'alaa') {
             this.$router.replace('/inspire');
+            this.$store.commit('flipBarAppearance');
           }
           else
             alert('wrong username or password');
@@ -80,7 +81,7 @@
   }
 
   .em-text {
-    color: white;
+    color: #191153;
   }
 
   .pen-title h1 {

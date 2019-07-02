@@ -29,29 +29,38 @@
       :clipped-left="clipped"
       fixed
       app
-      v-if="false"
+      v-if="showBar"
+      color="blue"
+      dark
     >
-      <v-toolbar-side-icon @click="drawer = !drawer"/>
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon>{{ `chevron_${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>web</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>remove</v-icon>
-      </v-btn>
+      <!--      <v-toolbar-side-icon @click="drawer = !drawer"/>-->
+      <!--      <v-btn-->
+      <!--        icon-->
+      <!--        @click.stop="miniVariant = !miniVariant"-->
+      <!--      >-->
+      <!--        <v-icon>{{ `chevron_${miniVariant ? 'right' : 'left'}` }}</v-icon>-->
+      <!--      </v-btn>-->
+      <!--      <v-btn-->
+      <!--        icon-->
+      <!--        @click.stop="clipped = !clipped"-->
+      <!--      >-->
+      <!--        <v-icon>web</v-icon>-->
+      <!--      </v-btn>-->
+      <!--      <v-btn-->
+      <!--        icon-->
+      <!--        @click.stop="fixed = !fixed"-->
+      <!--      >-->
+      <!--        <v-icon>remove</v-icon>-->
+      <!--      </v-btn>-->
       <v-toolbar-title v-text="title"/>
-      <v-spacer/>
+      <v-spacer></v-spacer>
+      <v-btn
+        @click.stop="signOut"
+        flat
+        >
+        <v-icon>lock</v-icon>
+        Sign out
+      </v-btn>
     </v-toolbar>
     <v-content :class="{ background: true }">
       <v-container>
@@ -61,9 +70,9 @@
     <v-footer
       :fixed="fixed"
       app
-      v-if="false"
+      v-if="showBar"
     >
-      <span>&copy; 2019</span>
+      <span style="margin: auto">&copy; 2019</span>
     </v-footer>
   </v-app>
 </template>
@@ -89,6 +98,17 @@
         ],
         miniVariant: false,
         title: 'Education Academy'
+      }
+    },
+    methods: {
+      signOut() {
+        this.$store.commit('flipBarAppearance');
+        this.$router.replace('/');
+      }
+    },
+    computed: {
+      showBar() {
+        return this.$store.getters.isAuthenticated;
       }
     }
   }
