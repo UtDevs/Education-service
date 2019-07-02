@@ -20,6 +20,61 @@ export default {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://use.fontawesome.com/releases/v5.5.0/css/all.css',
+        integrity:
+          'sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU',
+        crossorigin: "anonymous"
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css'
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css'
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css'
+      }
+    ],
+    script: [
+      {
+        src: "//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+      },
+      {
+        src: "https://code.jquery.com/jquery-3.3.1.js"
+      },
+      {
+        src: "https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"
+      },
+      {
+        src: "https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"
+      },
+      {
+        src: "https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"
+      },
+      {
+        src: "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"
+      },
+      {
+        src: "https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"
+      },
+      {
+        src: "https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"
+      },
+      {
+        src: "https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"
+      },
+      {
+        src: "https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"
       }
     ]
   },

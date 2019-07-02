@@ -6,6 +6,7 @@
       :clipped="clipped"
       fixed
       app
+      v-if="false"
     >
       <v-list>
         <v-list-tile
@@ -19,7 +20,7 @@
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title v-text="item.title" />
+            <v-list-tile-title v-text="item.title"/>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -28,8 +29,9 @@
       :clipped-left="clipped"
       fixed
       app
+      v-if="false"
     >
-      <v-toolbar-side-icon @click="drawer = !drawer" />
+      <v-toolbar-side-icon @click="drawer = !drawer"/>
       <v-btn
         icon
         @click.stop="miniVariant = !miniVariant"
@@ -48,17 +50,18 @@
       >
         <v-icon>remove</v-icon>
       </v-btn>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
+      <v-toolbar-title v-text="title"/>
+      <v-spacer/>
     </v-toolbar>
-    <v-content>
+    <v-content :class="{ background: true }">
       <v-container>
-        <nuxt />
+        <nuxt/>
       </v-container>
     </v-content>
     <v-footer
       :fixed="fixed"
       app
+      v-if="false"
     >
       <span>&copy; 2019</span>
     </v-footer>
@@ -66,27 +69,40 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      items: [
-        {
-          icon: 'apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'bubble_chart',
-          title: 'Inspire',
-          to: '/inspire'
-        }
-      ],
-      miniVariant: false,
-      title: 'Education Academy'
+  export default {
+    data() {
+      return {
+        clipped: false,
+        drawer: false,
+        fixed: false,
+        items: [
+          {
+            icon: 'apps',
+            title: 'Welcome',
+            to: '/'
+          },
+          {
+            icon: 'bubble_chart',
+            title: 'Inspire',
+            to: '/inspire'
+          }
+        ],
+        miniVariant: false,
+        title: 'Education Academy'
+      }
     }
   }
-}
 </script>
+
+<style scoped>
+  .background {
+    background-image: url(../static/schoolBackground.jpg);
+    /* Full height */
+    color: white;
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>

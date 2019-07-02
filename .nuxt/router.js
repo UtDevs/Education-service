@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import { interopDefault } from './utils'
 
 const _241d6622 = () => interopDefault(import('../pages/inspire.vue' /* webpackChunkName: "pages/inspire" */))
+const _5ca74934 = () => interopDefault(import('../pages/videoContent.vue' /* webpackChunkName: "pages/videoContent" */))
 const _7677e7cc = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
 Vue.use(Router)
@@ -83,6 +84,10 @@ export function createRouter() {
       path: "/inspire",
       component: _241d6622,
       name: "inspire"
+    }, {
+      path: "/videoContent",
+      component: _5ca74934,
+      name: "videoContent"
     }, {
       path: "/",
       component: _7677e7cc,
